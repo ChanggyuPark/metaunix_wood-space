@@ -7,3 +7,12 @@
 /* Explicit dark-section ink: prevent Sixshop theme text styles from leaking into the landing. */
 :host, :host > div, .hero, .marquee, section:not(.light):not(.cta) {color:#ffffff;}
 .light, .cta {color:#151515;}
+
+/* Contrast fix: explicitly set ink within Shadow DOM rather than relying on Sixshop inheritance. */
+:host { color:#fff; }
+:host .hero, :host .marquee, :host section:not(.light):not(.cta) { color:#fff; }
+:host .hero h1, :host section:not(.light):not(.cta) h2, :host section:not(.light):not(.cta) h3,
+:host .hero .herohead h1, :host section:not(.light):not(.cta) .statement { color:#fff !important; }
+:host .hero .outline, :host section:not(.light):not(.cta) .statement em { color:var(--acid) !important; }
+:host .light, :host .cta { color:#151515; }
+:host .light :is(h2,h3), :host .cta h2 {color:#151515 !important;}
